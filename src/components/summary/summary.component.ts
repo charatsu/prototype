@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DocumentService } from 'src/services/document.service';
 import { SaleService } from 'src/services/sale.service';
 
@@ -12,7 +12,7 @@ export class SummaryComponent implements OnInit {
   id;
   quote;
   document = false;
-  constructor(private route: ActivatedRoute, private saleService: SaleService, private documentService: DocumentService ) { }
+  constructor(private route: ActivatedRoute, private saleService: SaleService, private documentService: DocumentService, private router: Router) { }
 
   async ngOnInit(): Promise<void> {
     this.id = this.route.snapshot.queryParamMap.get('id');
@@ -44,5 +44,7 @@ export class SummaryComponent implements OnInit {
     window.open(url);  
   }
 
-
+  async backHome() {
+    this.router.navigate(["/"])
+  }
 }

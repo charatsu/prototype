@@ -172,7 +172,7 @@ export class QuestionComponent implements OnInit {
       answers: {},
     };
     this.attribute = {
-      salesChannel: productDetail.data.relationships.salesChannel.data[0].id,
+      salesChannel: PAattribute.salesChannel,
       salesChannelName: "SalesLab",
       productVersionId: versionId,
       productName: productDetail.data.attributes.name,

@@ -14,7 +14,7 @@ export class ProductClient extends GatewayClient {
     }
 
     getProductDetail(id: string) {
-        return this.get('products/' + id + '?include=productVersions%2CactiveVersion%2CsalesChannel')
+        return this.get('products/' + id + '?include=productVersions%2CactiveVersion')
     }
     
     getProductVersionDetail(id: string) {
